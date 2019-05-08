@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enter information</title>
+
+        <style>
+            form
+            {
+                margin-top: 200px;
+                background-color:#999999;
+                width: 50%;
+                height: 200px;
+                padding: 5px;
+
+            }
+            input[type=text]
+            {
+                width: 90%;
+                height: 30px;
+                margin: 5px;
+                padding: 1px;
+                font-size: large;
+            }
+            input[type=submit]
+            {
+                width: 50%;
+                height: 30px;
+                margin: 5px;
+                font-size: large;
+                
+            }
+        
+        </style>
+
+        <script>
+            function get_id()
+            {
+                var url= window.location;
+                var para =url.search.split('=');
+                return para[1];   
+            }
+            setTimeout(function(){document.getElementsByName("id")[0].value=get_id();},2);//waiting for DOM to load
+        </script>
+    </head>
+
+    <body>
+            <center> <form method="POST" action="order_process.php">
+            <input type="hidden" name="id" >
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="phone" placeholder="Phone number">
+            <input type="text" name="address" placeholder="address">
+            <input type="submit" value="sent Order"> 
+        </form> </center>
+
+
+
+    </body>
+
+
+
+</html>
+
+
